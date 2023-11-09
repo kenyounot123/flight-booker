@@ -20,21 +20,22 @@ Flight.create(
   origin_airport: Airport.find_by(airport_code: "SFO"),
   destination_airport: Airport.find_by(airport_code: "NYC"),
   flight_duration: 300,
-  departure_time: DateTime.parse('3rd Feb 2023 04:00:00 PM'),
-  arrival_time: DateTime.parse('3rd Feb 2023 09:00:00 PM')
+  departure_date: Date.parse('3rd Nov 2023'),
+  departure_time: Time.parse('Nov 3, 2023 13:30')
 )
 Flight.create(
   origin_airport: Airport.find_by(airport_code: "BOS"),
   destination_airport: Airport.find_by(airport_code: "HNL"),
   flight_duration: 240,
-  departure_time: DateTime.parse('3rd Nov 2023 04:00:00 PM'),
-  arrival_time: DateTime.parse('3rd Nov 20023 08:00:00 PM')
+  departure_date: Date.parse('3rd Nov 2023'),
+  departure_time: Time.parse('Nov 3, 2023 13:30')
 )
 Flight.create(
   origin_airport: Airport.find_by(airport_code: "HNL"),
   destination_airport: Airport.find_by(airport_code: "ATL"),
   flight_duration: 240,
-  departure_time: DateTime.parse('13 Nov 2023 04:00:00 PM'),
-  arrival_time: DateTime.parse('13 Nov 20023 08:00:00 PM')
+  departure_date: Date.parse('13 Nov 2023'),
+  departure_time: Time.parse('Nov 3, 2023 13:30')
 )
+
 

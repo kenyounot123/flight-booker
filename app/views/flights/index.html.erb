@@ -1,1 +1,41 @@
 <h1>All Flights</h1>
+
+<%= form_with url: "/flights", method: :get do |f| %>
+  <div class='form-field'>
+    <%= f.label "Origin" %>
+    <%= f.select(:origin_id,
+                options_for_select(@airport_options, params[:origin_id]), 
+                required: true) %>
+  </div>
+
+  <div class='form-field'>
+    <%= f.label "Destination" %>
+    <%= f.select(:destination_id,
+                options_for_select(@airport_options, params[:destination_id]),
+                required: true) %>
+  </div>
+
+  <div class='form-field'>
+    <%= f.label "Number of Passengers" %>
+    <%= f.select(:passenger_count,
+                options_for_select([1,2,3,4], params[:passenger_count]), 
+                required: true) %>
+  </div>
+
+  <div class='form-field'>
+    <%= f.label "Departure Date" %>
+    <%= f.select(:departure_date, 
+                  Flight.options_for_select, 
+                  selected: params[:departure_date], 
+                  required: true) %>
+  </div>
+
+  <div class='form-button'>
+    <%= f.submit "Check Flights" %>
+  </div>
+
+
+  <div class='flight-results'>
+    
+  </div>
+<% end %>
