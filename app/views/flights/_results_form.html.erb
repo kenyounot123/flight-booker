@@ -1,0 +1,14 @@
+<h1> All available flights </h1>
+
+<% if @available_flights.nil? %>
+  Sorry there are no available flights currently
+
+<% else %>
+  <% @available_flights.each do |flight| %>
+    <%= flight.origin_airport.code  %> To <%= flight.destination_airport.code %><br>
+    Duration of flight is <%= flight.flight_duration %> minutes <br>
+    Departure date and time: <%= flight.departure_time %><br>
+  <% end %>
+<% end %>
+
+

@@ -22,9 +22,9 @@
 
   <div class='form-field'>
     <%= f.label "Departure Date" %>
-    <%= f.select(:departure_date, 
+    <%= f.select(:departure_time, 
                   Flight.options_for_select, 
-                  selected: params[:departure_date], 
+                  selected: params[:departure_time], 
                   required: true) %>
   </div>
 

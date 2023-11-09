@@ -9,33 +9,37 @@
 #   end
 Airport.delete_all
 Flight.delete_all
-
-["SFO", "NYC", "BOS", "HNL", "ATL"].each do |code|
+all_airports = {
+  "SFO": "San Francisco, CA",
+  "NYC": "New York City, US",
+  "BOS": "Boston, MA",
+  "HNL": "Honolulu, HL",
+  "LAX": "Los Angeles, CA"
+}
+all_airports.each do |code, location|
   Airport.create(
-    airport_code: "#{code}",
+    code: code,
+    location: location
   )
 end
 
 Flight.create(
-  origin_airport: Airport.find_by(airport_code: "SFO"),
-  destination_airport: Airport.find_by(airport_code: "NYC"),
+  origin_airport: Airport.find_by(code: "SFO"),
+  destination_airport: Airport.find_by(code: "NYC"),
   flight_duration: 300,
-  departure_date: Date.parse('3rd Nov 2023'),
-  departure_time: Time.parse('Nov 3, 2023 13:30')
+  departure_time: Faker::Time.between_dates(from: Date.today - 1, to:Date.today, period: :all)
 )
 Flight.create(
-  origin_airport: Airport.find_by(airport_code: "BOS"),
-  destination_airport: Airport.find_by(airport_code: "HNL"),
+  origin_airport: Airport.find_by(code: "BOS"),
+  destination_airport: Airport.find_by(code: "HNL"),
   flight_duration: 240,
-  departure_date: Date.parse('3rd Nov 2023'),
-  departure_time: Time.parse('Nov 3, 2023 13:30')
+  departure_time: Faker::Time.between_dates(from: Date.today - 1, to:Date.today, period: :all)
 )
 Flight.create(
-  origin_airport: Airport.find_by(airport_code: "HNL"),
-  destination_airport: Airport.find_by(airport_code: "ATL"),
+  origin_airport: Airport.find_by(code: "HNL"),
+  destination_airport: Airport.find_by(code: "LAX"),
   flight_duration: 240,
-  departure_date: Date.parse('13 Nov 2023'),
-  departure_time: Time.parse('Nov 3, 2023 13:30')
+  departure_time: Faker::Time.between_dates(from: Date.today - 1, to:Date.today, period: :all)
 )
 
 
