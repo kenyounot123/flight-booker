@@ -30,6 +30,12 @@ Flight.create(
   departure_time: Faker::Time.between_dates(from: Date.today - 1, to:Date.today, period: :all)
 )
 Flight.create(
+  origin_airport: Airport.find_by(code: "SFO"),
+  destination_airport: Airport.find_by(code: "NYC"),
+  flight_duration: 300,
+  departure_time: Faker::Time.between_dates(from: Date.today - 1, to:Date.today, period: :all)
+)
+Flight.create(
   origin_airport: Airport.find_by(code: "BOS"),
   destination_airport: Airport.find_by(code: "HNL"),
   flight_duration: 240,

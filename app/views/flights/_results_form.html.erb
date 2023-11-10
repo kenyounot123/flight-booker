@@ -1,14 +1,21 @@
-<h1> All available flights </h1>
+<%= form_with url: "bookings/new/", method: :get do |f| %>
+   <%= f.hidden_field :passenger_count, value: params[:passenger_count] %>
+  <h1> All available flights </h1>
 
-<% if @available_flights.nil? %>
-  Sorry there are no available flights currently
+  <% if @available_flights.empty? %>
+    Sorry there are no available flights currently
 
-<% else %>
-  <% @available_flights.each do |flight| %>
-    <%= flight.origin_airport.code  %> To <%= flight.destination_airport.code %><br>
-    Duration of flight is <%= flight.flight_duration %> minutes <br>
-    Departure date and time: <%= flight.departure_time %><br>
+  <% else %>
+
+    <% @available_flights.each do |flight| %>
+      <div class='flights-container'> 
+        <%= flight.origin_airport.code  %> To <%= flight.destination_airport.code %><br>
+        Duration of flight is <%= flight.flight_duration %> minutes <br>
+        Departure date and time: <%= flight.departure_time %><br>
+      </div>
+    <% end %>
   <% end %>
+
 <% end %>
 
 

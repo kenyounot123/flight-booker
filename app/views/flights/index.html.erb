@@ -4,5 +4,6 @@
 
 <p>Choose flight options to see available flights</p>
 
-
-<%= render partial: 'results_form' %>
+<% if @available_flights %>
+  <%= render partial: 'results_form' %>
+<% end %>
