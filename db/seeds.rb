@@ -22,30 +22,39 @@ all_airports.each do |code, location|
     location: location
   )
 end
-
+date_time = {}
+4.times do |time|
+  random_time = Faker::Time.between_dates(from: Date.today - 1, to: Date.today, period: :all)
+  random_date = random_time.to_date
+  date_time[time] = [random_time, random_date]
+end
 Flight.create(
   origin_airport: Airport.find_by(code: "SFO"),
   destination_airport: Airport.find_by(code: "NYC"),
   flight_duration: 300,
-  departure_time: Faker::Time.between_dates(from: Date.today - 1, to:Date.today, period: :all)
+  departure_time: date_time[0][0],
+  departure_date: date_time[0][1]
 )
 Flight.create(
   origin_airport: Airport.find_by(code: "SFO"),
   destination_airport: Airport.find_by(code: "NYC"),
   flight_duration: 300,
-  departure_time: Faker::Time.between_dates(from: Date.today - 1, to:Date.today, period: :all)
+  departure_time: date_time[1][0],
+  departure_date: date_time[1][1]
 )
 Flight.create(
   origin_airport: Airport.find_by(code: "BOS"),
   destination_airport: Airport.find_by(code: "HNL"),
   flight_duration: 240,
-  departure_time: Faker::Time.between_dates(from: Date.today - 1, to:Date.today, period: :all)
+  departure_time: date_time[2][0],
+  departure_date: date_time[2][1]
 )
 Flight.create(
   origin_airport: Airport.find_by(code: "HNL"),
   destination_airport: Airport.find_by(code: "LAX"),
   flight_duration: 240,
-  departure_time: Faker::Time.between_dates(from: Date.today - 1, to:Date.today, period: :all)
+  departure_time: date_time[3][0],
+  departure_date: date_time[3][1]
 )
 
 

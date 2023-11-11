@@ -15,10 +15,9 @@ class FlightsController < ApplicationController
     if params[:origin_id] == params[:destination_id]
       flash[:alert] = "Please choose two different origin and destination locations!"
       return []
-    else
-      departure_date = Date.parse(params[:departure_time])
-      Flight.where("DATE(departure_time) = ?", departure_date)
-            .where(origin_id: params[:origin_id],
+    else  
+      Flight.where(departure_date: params[:departure_date],
+                   origin_id: params[:origin_id],
                    destination_id: params[:destination_id])
     end
 

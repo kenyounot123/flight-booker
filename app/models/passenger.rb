@@ -1,5 +1,5 @@
 class Passenger < ApplicationRecord
-  has_many :bookings
+  belongs_to :booking
   has_many :flights, through: :booking
 
   validates :name, presence: true
