@@ -1,0 +1,11 @@
+<h1>Flight ID: <%= params[:flight_id] %></h1>
+<div class='booking-details'>
+  <h2>Flight Details:</h2> 
+  <div>
+    <%= @flight.origin_airport.code  %> To <%= @flight.destination_airport.code %><br>
+      Duration of flight is <%= @flight.flight_duration %> minutes <br>
+      Departure date and time: <%= @flight.departure_time %><br>
+  </div>
+  Number of Passengers: <%= @num_of_passengers %>
+  <%# <%= fields_for %> 
+</div>
