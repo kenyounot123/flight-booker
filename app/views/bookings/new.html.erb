@@ -1,11 +1,30 @@
-<h1>Flight ID: <%= params[:flight_id] %></h1>
-<div class='booking-details'>
-  <h2>Flight Details:</h2> 
-  <div>
-    <%= @flight.origin_airport.code  %> To <%= @flight.destination_airport.code %><br>
-      Duration of flight is <%= @flight.flight_duration %> minutes <br>
-      Departure date and time: <%= @flight.departure_time %><br>
+<%= form_with model: @booking do |form| %>
+  <h1>Flight ID: <%= params[:flight_id] %></h1>
+  <div class='booking-details'>
+    <h2>Flight Details:</h2> 
+    <div>
+      <%= @flight.origin_airport.code  %> To <%= @flight.destination_airport.code %><br>
+        Duration of flight is <%= @flight.flight_duration %> minutes <br>
+        Departure date and time: <%= @flight.departure_time %><br>
+    </div>
+    Number of Passengers: <%= @num_of_passengers %>
+    <% (1..@num_of_passengers.to_i).each do |passenger_number| %>
+      <% if @num_of_passengers.to_i > 1 %>
+        <h4><%= "Passenger #{passenger_number} Information" %></h4>
+      <% else %>
+        <h4>Passenger Information</h4>
+      <% end %>
+      <div class='passenger-field'>
+        <%= fields_for :passenger do |passenger_fields| %>
+          <%= passenger_fields.label :name, "Name of Passenger" %>
+          <%= passenger_fields.text_field :name %>
+          <br>
+          <%= passenger_fields.label :email, "Email of Passenger" %>
+          <%= passenger_fields.email_field :email%> 
+        <% end %>
+      </div> 
+    <% end %>
   </div>
-  Number of Passengers: <%= @num_of_passengers %>
-  <%# <%= fields_for %> 
-</div>
+
+  <%= form.submit "Finalize Booking" %>
+<% end %>

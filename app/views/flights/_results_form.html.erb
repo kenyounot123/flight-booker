@@ -1,4 +1,5 @@
 <%= form_with url: new_booking_path, method: :get do |f| %>
+
   <%= f.hidden_field :passenger_count, value: params[:passenger_count] %>
   <h1> All available flights </h1>
 
@@ -11,15 +12,12 @@
     </div>
   <% end %>
 
-
-
-
-
   <% if @available_flights.empty? %>
     Sorry there are no available flights currently
   <% end %>
-
-  <%= f.submit "Book Flight" %>
+  <div class="submit-button">
+    <%= f.submit "Book Flight" %>
+  </div>
 <% end %>
 
 
