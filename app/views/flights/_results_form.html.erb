@@ -14,10 +14,11 @@
 
   <% if @available_flights.empty? %>
     Sorry there are no available flights currently
+  <% else %>
+    <div class="submit-button">
+      <%= f.submit "Book Flight" %>
+    </div>
   <% end %>
-  <div class="submit-button">
-    <%= f.submit "Book Flight" %>
-  </div>
 <% end %>
 
 
