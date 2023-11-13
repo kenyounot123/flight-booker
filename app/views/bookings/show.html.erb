@@ -1,8 +1,22 @@
 <h1>Thank you for booking this flight</h1>
-<h2>Booking information:</h2>
+<h2>Booking Confirmation:</h2>
 
-<%= @booking.flight_id %><br>
-<% @booking.passengers.each do |passenger| %>
-  <%= passenger.name %>
-  <%= passenger.email %>
+<p>Flight Number: <%= @booking.flight_id %><br>
+<h2>Flight Details:</h2> 
+    <div>
+      <%= @booking.flight.origin_airport.code  %> To <%= @booking.flight.destination_airport.code %><br>
+        Duration of flight is <%= @booking.flight.flight_duration %> minutes <br>
+        Departure date and time: <%= @booking.flight.departure_time %><br>
+    </div>
+<h2><%= pluralize(@booking.passengers.size,'Passenger') %></h2>
+<% @booking.passengers.each_with_index do |passenger, index| %>
+  <div>
+    <% if @booking.passengers.size > 1 %>
+      <p>Passenger <%="#{index + 1}"%> Name: <%= passenger.name %></p>
+      <p>Passenger <%="#{index + 1}"%> Email: <%= passenger.email %></p><br>
+    <% else %>
+      <p>Passenger Name: <%= passenger.name %></p>
+      <p>Passenger Email: <%= passenger.email %></p>
+    <% end %>
+  </div>
 <% end %>
