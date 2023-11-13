@@ -1,11 +1,10 @@
 # Odin Flight Booker
 
 ## Demo
-![Flightbooker]
+![flight-booker-rails](https://github.com/kenyounot123/flight-booker/assets/70028795/1b029f62-2d0e-4c3b-b0fd-243a39bda635)
+Created a one-way flight booker with the typical airline booking flow:
 
-Created a one-way flight booker with the typical airline blooking flow:
-
-* Enter desired dates / airports and click "Search"
+* Enter desired dates/airports and click "Search"
 
 * Choose from among a list of available flights
 
@@ -13,11 +12,11 @@ Created a one-way flight booker with the typical airline blooking flow:
 
 ## DISCLAIMER
 * This app only works for certain dates and certain flights because of how I seeded the database
-* Working flights are SFO to NYC , BOS to HNL, HNL to LAX
-* Working dates respectively are, Nov 9, Nov 10, Nov 10, Nov 10
+* Working flights are SFO to NYC, BOS to HNL, HNL to LAX
+* Working dates respectively are, Nov 9, Nov 10, Nov 10, and Nov 10
 
 ## Things I would add
-* When I come back to this project I would like to add proper formatting of views with css
+* When I come back to this project I would like to add proper formatting of views with CSS
 * Refactor code for better readability 
 * Refactor code for seeding the database better
 
