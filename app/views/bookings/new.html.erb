@@ -1,4 +1,14 @@
 <%= form_with model: @booking do |form| %>
+  <% if @booking.errors.any? %>
+    <div>
+      <%= pluralize(@booking.errors.count, "Error") %> prohibited this booking from being saved
+      <ul>
+        <% @booking.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
   <h1>Flight ID: <%= params[:flight_id] %></h1>
   <div class='booking-details'>
     <h2>Flight Details:</h2> 
