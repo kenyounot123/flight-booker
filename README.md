@@ -1,7 +1,7 @@
 # Odin Flight Booker
 
 ## Demo
-![flight-booker-rails](https://github.com/kenyounot123/flight-booker/assets/70028795/9a65661c-0b2e-4466-9275-9ed6aa6e0aed)
+![flight-booker-rails](https://github.com/kenyounot123/flight-booker/assets/70028795/9a65661c-0b2e-4466-9275-9ed6aa6e0aed) <br>
 Created a one-way flight booker with the typical airline booking flow:
 
 * Enter desired dates/airports and click "Search"
