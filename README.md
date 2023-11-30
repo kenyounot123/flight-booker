@@ -27,6 +27,7 @@ Created a one-way flight booker with the typical airline blooking flow:
 * Select boxes 
 * Faker gem
 * More practice on associations, forms, params
+
 ## Challenges
 * Had trouble figuring out what kind of associations each model should have. 
 * Had trouble seeding the database properly 
