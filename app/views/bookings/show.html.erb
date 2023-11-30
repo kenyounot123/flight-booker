@@ -23,28 +23,19 @@
 
 <div data-controller="passenger">
   <div data-passenger-target="newPassengerContainer"></div>
-  <button data-action="click->passenger#addPassenger">
+  <button data-action="click->passenger#addPassengerField">
     Add another passenger
+  </button>
+  <button data-action="click->passenger#deletePassengerField">
+    Delete Passenger
   </button>
   <template data-passenger-target="passengerForm">
     <%= form_with model: @booking do |form| %>
-      <%= form.fields_for :passengers do |passenger_field| %>
-        <%= form.hidden_field :flight_id, value: @booking.flight.id %>
-          <div class="passenger-field">
-            <div class="form-field">
-              <%= passenger_field.label :name, "Name of Passenger" %>
-              <%= passenger_field.text_field :name, 
-                                              required: true,
-                                              placeholder: "Bobby Chen" %>
-            </div>
-            <div class="form-field">
-              <%= passenger_field.label :email, "Email of Passenger" %>
-              <%= passenger_field.email_field :email, 
-                                              required: true,
-                                              placeholder: "Bobby@gmail.com" %> 
-            </div><br>
-          </div> 
-      <% end %>
+      <%= render partial: 'passenger_fields',
+                 locals: { form: form, 
+                           local_passenger: Passenger.new,
+                          flight: @booking.flight } %>
+      <%= form.submit "Finalize Booking" %>
     <% end %>
   </template>
 </div>
