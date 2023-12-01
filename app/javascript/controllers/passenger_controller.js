@@ -1,7 +1,7 @@
 import { Controller } from '@hotwired/stimulus';
 
 export default class extends Controller {
-  static targets = ["passengerForm", "newPassengerFormContainer"]
+  static targets = ["passengerForm", "newPassengerFormContainer", "destroyFlag", "destroyButton"]
 
   /* Get time in milliseconds and replace child_index with that time
   This allows for a unique index for each dynamically added nested form */
@@ -22,6 +22,18 @@ export default class extends Controller {
   }
 
   deletePassengerField() {
+    const passengerFieldArray = this.destroyFlagTargets
+    const destroyButtonArray = this.destroyButtonTargets
+    const lastDestroyButton = destroyButtonArray.length - 1
+    const lastPassengerField = passengerFieldArray.length - 1
 
+
+    this.destroyFlagTargets[lastPassengerField].value = true
+    this.destroyFlagTargets.forEach(element => {
+      if (element.value === "true") {
+        element.closest(".passenger-field").remove()
+        destroyButtonArray[lastDestroyButton].remove()
+      }
+    });
   }
 }

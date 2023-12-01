@@ -1,6 +1,7 @@
 <%= form.fields_for :passengers, local_passenger, child_index: child_index do |passenger_field| %>
   <%= form.hidden_field :flight_id, value: flight.id %>
     <div class="passenger-field">
+      <%= passenger_field.hidden_field :_destroy, data: { passenger_target: "destroyFlag"} %>
       <div class="form-field">
         <%= passenger_field.label :name, "Name of Passenger" %>
         <%= passenger_field.text_field :name, 
@@ -12,6 +13,6 @@
         <%= passenger_field.email_field :email, 
                                         required: true,
                                         placeholder: "Bobby@gmail.com" %> 
-      </div><br>
+      </div>
     </div> 
 <% end %>
