@@ -21,7 +21,10 @@
    
 
     <%= render partial: 'passenger_fields',
-               locals: {form: form, local_passenger: nil, flight: @flight } %>
+               locals: {form: form,
+                        local_passenger: nil,
+                        child_index: nil,
+                        flight: @flight } %>
 
   </div>
 

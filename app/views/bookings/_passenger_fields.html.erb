@@ -1,4 +1,4 @@
-<%= form.fields_for :passengers, local_passenger do |passenger_field| %>
+<%= form.fields_for :passengers, local_passenger, child_index: child_index do |passenger_field| %>
   <%= form.hidden_field :flight_id, value: flight.id %>
     <div class="passenger-field">
       <div class="form-field">

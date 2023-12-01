@@ -22,7 +22,7 @@
 <% end %>
 
 <div data-controller="passenger">
-  <div data-passenger-target="newPassengerContainer"></div>
+  <div data-passenger-target="newPassengerFormContainer"></div>
   <button data-action="click->passenger#addPassengerField">
     Add another passenger
   </button>
@@ -34,7 +34,8 @@
       <%= render partial: 'passenger_fields',
                  locals: { form: form, 
                            local_passenger: Passenger.new,
-                          flight: @booking.flight } %>
+                           child_index: "NEW_RECORD",
+                           flight: @booking.flight } %>
       <%= form.submit "Finalize Booking" %>
     <% end %>
   </template>
