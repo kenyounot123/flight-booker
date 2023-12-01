@@ -34,7 +34,7 @@
       <%= render partial: 'passenger_fields',
                  locals: { form: form, 
                            local_passenger: Passenger.new,
-                           child_index: "NEW_RECORD",
+                           child_index: 'NEW_RECORD',
                            flight: @booking.flight } %>
       <%= form.submit "Finalize Booking" %>
     <% end %>
