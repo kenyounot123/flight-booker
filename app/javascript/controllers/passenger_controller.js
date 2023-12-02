@@ -21,6 +21,7 @@ export default class extends Controller {
     this.newPassengerFormContainerTarget.appendChild(formClone)
   }
 
+  // deletes only the most bottom form and delete button instead of the form with the associated delete button
   deletePassengerField() {
     const passengerFieldArray = this.destroyFlagTargets
     const destroyButtonArray = this.destroyButtonTargets

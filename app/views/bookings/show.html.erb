@@ -21,25 +21,3 @@
   </div>
 <% end %>
 
-<div data-controller="passenger">
-  <div data-passenger-target="newPassengerFormContainer">
-  </div>
-  <br>
-  <button data-action="click->passenger#addPassengerField">
-    Add another passenger
-  </button>
-  <template data-passenger-target="passengerForm">
-    <%= form_with model: @booking do |form| %>
-      <%= render partial: 'passenger_fields',
-                 locals: { form: form, 
-                           local_passenger: Passenger.new,
-                           child_index: 'NEW_RECORD',
-                           flight: @booking.flight } %>
-    <% end %>
-    <button 
-      data-passenger-target = "destroyButton"
-      data-action="click->passenger#deletePassengerField">
-      Delete Passenger
-    </button>
-  </template>
-</div>
