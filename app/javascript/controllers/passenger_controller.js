@@ -12,7 +12,7 @@ export default class extends Controller {
     // this returns a DocumentFragment object.
     const formClone = this.passengerFormTarget.content.cloneNode(true)
     // This selects the form element of the cloned DocumentFragment object 
-    const clonedContent = formClone.querySelector('form')
+    const clonedContent = formClone.querySelector('div')
     // Replaces the cloned content's innerHTML instead of the template one so that we can reuse the template
     const modifiedContent = clonedContent.innerHTML.replace(/NEW_RECORD/g, date_time_index)
     // Update the cloned content's innerHTML with the modified content.

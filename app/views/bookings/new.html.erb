@@ -27,6 +27,8 @@
                         flight: @flight } %>
 
   </div>
+  <br>
+  
   <div data-controller="passenger">
     <div data-passenger-target="newPassengerFormContainer">
     </div>
@@ -35,13 +37,12 @@
       Add another passenger
     </button>
     <template data-passenger-target="passengerForm">
-      <%= form_with model: @booking do |form| %>
-        <%= render partial: 'passenger_fields',
-                  locals: { form: form, 
-                            local_passenger: Passenger.new,
-                            child_index: 'NEW_RECORD',
-                            flight: @booking.flight } %>
-      <% end %>
+
+      <%= render partial: 'passenger_fields',
+                 locals: { form: form, 
+                           local_passenger: Passenger.new,
+                           child_index: 'NEW_RECORD',
+                           flight: @flight } %>
       <button 
         data-passenger-target = "destroyButton"
         data-action="click->passenger#deletePassengerField">
