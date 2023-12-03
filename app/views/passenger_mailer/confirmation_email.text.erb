@@ -1,0 +1,9 @@
+Thank you for booking this flight!
+
+You have successfully booked your flight for the following passengers: 
+<% @booking.passengers.each do |passenger| %>
+  Name: <%= passenger.name %>   Email: <%= passenger.email %>
+<% end %>
+To view your booking click on this link: <%= @url %>.
+
+Thanks for booking our flight and have a great day!

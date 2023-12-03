@@ -1,0 +1,39 @@
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Thank you for booking this flight!</h1>
+    <table>
+      <thead>
+        <tr>
+          <th>Flight Number:</th>
+          <th>Departure Airport</th>
+          <th>Arrival Airport</th>
+          <th>Date</th>
+          <th>Duration</th>
+        </tr>
+
+        <tr>
+          <td><%= @booking.flight.id %></td>
+          <td><%= @booking.flight.origin_airport.code %></td>
+          <td><%= @booking.flight.destination_airport.code %></td>
+          <td><%= @booking.flight.departure_date %></td>
+          <td><%= @booking.flight.flight_duration %></td>
+        </tr>
+      </thead>
+    </table>
+    <p>
+      You have successfully booked your flight for the following passengers: <br>
+      <ul>
+        <% @booking.passengers.each do |passenger| %>
+          <li> Name: <%= passenger.name %>    Email: <%= passenger.email %> </li>
+        <% end %>
+      </ul>
+    </p>
+    <p>
+      To view your booking click on this link: <%= link_to "booking page", @url %>.
+    </p>
+    <p>Thanks for booking our flight and have a great day!</p>
+  </body>
+</html>
