@@ -68,3 +68,7 @@ group :test do
 end
 
 gem 'faker'
+
+gem "figaro" 
+
+gem "letter_opener", group: :development
