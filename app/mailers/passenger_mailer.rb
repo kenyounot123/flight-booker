@@ -5,6 +5,6 @@ class PassengerMailer < ApplicationMailer
     @booking = params[:booking]
     @url = booking_url(@booking)
     mail to: @booking.passengers.pluck(:email),
-         subject: "Confirmation email for #{@passenger.email}"
+         subject: "Thank you for booking our flight!"
   end
 end
