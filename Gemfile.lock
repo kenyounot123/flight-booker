@@ -105,6 +105,7 @@ GEM
       i18n (>= 1.8.11, < 2)
     figaro (1.2.0)
       thor (>= 0.14.0, < 2)
+    file_exists (0.2.0)
     globalid (1.2.1)
       activesupport (>= 6.1)
     i18n (1.14.1)
@@ -248,6 +249,7 @@ DEPENDENCIES
   debug
   faker
   figaro
+  file_exists (~> 0.2.0)
   importmap-rails
   jbuilder
   letter_opener

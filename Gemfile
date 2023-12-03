@@ -66,9 +66,8 @@ group :test do
   gem "capybara"
   gem "selenium-webdriver"
 end
+gem 'file_exists', '~> 0.2.0'
 
 gem 'faker'
-
-gem "figaro" 
-
+gem 'figaro'
 gem "letter_opener", group: :development

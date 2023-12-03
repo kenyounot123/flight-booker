@@ -11,7 +11,7 @@ Created a one-way flight booker with the typical airline booking flow:
 * Enter passenger information for all passengers
 
 ## DISCLAIMER
-* This app only works for certain dates and certain flights because of how I seeded the database
+* This app only works for certain dates and certain flights because of how I seeded the database (WILL CHANGE IN THE FUTURE)
 * Working flights are SFO to NYC, BOS to HNL, HNL to LAX
 * Working dates respectively are, Nov 9, Nov 10, Nov 10, and Nov 10
 
@@ -26,7 +26,10 @@ Created a one-way flight booker with the typical airline booking flow:
 * Select boxes 
 * Faker gem
 * More practice on associations, forms, params
-* stimulus controllers, Hotwire, 
+* stimulus controllers, Hotwire
+* Mailers
+* Letter Opener Gem 
+* 00000000000000000000000000000000000000000000000000
 
 ## Challenges
 * Had trouble figuring out what kind of associations each model should have. 
